@@ -1,0 +1,162 @@
+.punk {
+    padding: 100px 0;
+    height: 1350px;
+    &-caption{
+        font-family: $secondary-font;
+        font-size: 198px;
+        font-weight: bold;
+        text-align: center;
+    }
+    &-img {
+        @include absoluteCenter("both");
+        width: 865px;
+        height: auto;
+        margin-top: 200px;
+
+            // Làm mờ phần dưới
+        mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+    }
+    &-list {
+        @include flex-box (flex, stretch, space-between, row);
+    }
+    &-item-left {
+        width: 30%;
+        margin-top: 200px;
+    }
+    &-left-title {
+        font-size: 25px;
+        font-weight: 400;
+        margin-left: 50px;
+    }
+    &-left-desc {
+        font-size: 16px;
+        font-weight: 300;
+        color: $text-coler;
+        margin-top: 30px;
+        margin-left: 85px;
+        line-height: 1;
+    }
+    &-item-right {
+        width: 30%;
+        margin-top: 170px;
+        text-align: right;
+        margin-right: 60px;
+    }
+    &-right-title{
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+    &-right-desc {
+        font-size: 16px;
+        font-weight: 300;
+        color: $text-coler;
+        margin-top: 65px;
+        line-height: 2;
+        margin-bottom: 80px;
+    }
+    &-button {
+        padding: 15px 35px;
+        background: linear-gradient(to right, $primary-coler, $secondary-coler);
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: 400;
+    }
+    &-list-both {
+        @include flex-box (flex, flex-end, space-between, row);
+        margin-top: 110px;
+    }
+    &-bothleft-item {
+        width: 655px;
+        display: flex;
+        background: #333333;
+        margin-left: 85px;
+        border-radius: 10px;
+        z-index: 1;
+
+        // Viền gradient từ đỏ sang vàng
+        border: 1px solid transparent;
+        background-image: 
+            linear-gradient(#333333, #333333), /* nền bên trong */
+            linear-gradient(to right, $secondary-coler, $primary-coler); /* viền gradient */
+        background-origin: padding-box, border-box;
+        background-clip: padding-box, border-box;
+    }
+    &-bothleft-content {
+        margin-right: 40px;
+    }
+    &-bothleft-img {
+        width: 200px;
+        height: 265px;
+        border-radius: 10px;
+        margin: 35px 50px 35px 35px;
+    }
+    &-bothleft-number {
+        font-size: 58px;
+        font-weight: 500;
+        margin: 55px 0;
+    // Gradient chữ từ đỏ sang vàng
+        background: linear-gradient(to right, $secondary-coler, $primary-coler);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text; // Cho Firefox hỗ trợ tốt hơn
+        color: transparent; // fallback
+    }
+    &-bothleft-title {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+    &-bothleft-desc {
+        font-size: 18px;
+        color: $text-coler;
+        line-height: 1.4;
+    }
+    &-bothcenter-item {
+        width: 260px;
+        margin: 0 100px;
+    } 
+    &-bothcenter-title  {
+        text-transform: uppercase;
+        font-size: 36px;
+        margin-bottom: 65px;
+    }
+    &-bothcenter-desc{
+        font-size: 18px;
+        color: $text-coler;
+    }
+    &-bothright-item {
+        background: #333333;
+        border-radius: 10px;
+        margin-right: 60px;
+        width: 260px;
+        height: 250px;
+
+        // Viền gradient từ đỏ sang vàng
+        border: 1px solid transparent;
+        background-image: 
+            linear-gradient(#333333, #333333), /* nền bên trong */
+            linear-gradient(to right, $secondary-coler, $primary-coler); /* viền gradient */
+        background-origin: padding-box, border-box;
+        background-clip: padding-box, border-box;
+    }
+    &-bothright-title {
+        font-size: 83px;
+        font-weight: bolder;
+        margin-top: 35px;
+        margin-left: 40px;
+        margin-bottom: 45px;
+        // Gradient chữ từ đỏ sang vàng
+        background: linear-gradient(to right, $secondary-coler, $primary-coler);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text; // Cho Firefox hỗ trợ tốt hơn
+        color: transparent; // fallback
+    }
+    &-bothright-desc {
+        font-style: 28px;
+        margin-left: 50px;
+    }
+}
+.design-text {
+    font-weight: bold;
+}

@@ -1,0 +1,31 @@
+.header{
+    height: 160px;
+    &-logo {
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(to right, $primary-coler, $secondary-coler);
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-top: 20px;
+    }
+    &-list {
+        @include flex-box(flex, stretch, space-between, row);
+        padding: 70px 60px 70px 115px;
+    }
+    &-menu{
+        margin-top: 20px;
+        @include flex-box;
+        &-item {
+            margin-left: 50px;
+            font-size: 16px;
+        }
+    }
+    &-button {
+        padding: 20px 35px;
+        background: linear-gradient(to right, $primary-coler, $secondary-coler);
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+}

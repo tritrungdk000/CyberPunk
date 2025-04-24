@@ -1,0 +1,147 @@
+.your {
+    height: 1735px;
+    &-top {
+        @include flex-box(flex, center);
+        margin-right: 110px;
+        &-content {
+            margin-top: 80px;
+        }
+        &-title {
+            font-family: $secondary-font;
+            font-size: 55px;
+            font-weight: bold;
+            margin-bottom: 95px;
+            line-height: 1.5;
+        }
+        &-desc {
+            line-height: 1.5;
+            font-size: 18px;
+            color: $text-coler;
+            margin-bottom: 80px;
+        }
+        &-button {
+            @include flex-box;
+        }
+    }
+    &-design {
+        // Gradient chữ từ đỏ sang vàng
+        background: linear-gradient(to right, $secondary-coler, $primary-coler);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text; // Cho Firefox hỗ trợ tốt hơn
+        color: transparent; // fallback
+    }
+    &-border {
+        @include size(155px,50px);
+        @include flex-box(flex,center,center);
+        border-radius: 5px;
+        // Viền gradient từ đỏ sang vàng
+        border: 2px solid transparent;
+        background-image: 
+            linear-gradient(black), /* nền bên trong */
+            linear-gradient(to right, $secondary-coler, $primary-coler); /* viền gradient */
+        background-origin: padding-box, border-box;
+        background-clip: padding-box, border-box;
+        cursor: pointer;
+        &-button {
+            // Gradient chữ từ đỏ sang vàng
+            background: linear-gradient(to right, $secondary-coler, $primary-coler);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; // Cho Firefox hỗ trợ tốt hơn
+            color: transparent; // fallback
+            font-size: 17px;
+            font-weight: bold
+        }
+    }
+    &-button {
+        @include size(155px,50px);
+        @include flex-box(flex,center,center);
+        font-size: 17px;
+        border-radius: 5px;
+        font-weight: bold;
+        background: linear-gradient(to right, $primary-coler, $secondary-coler);
+        margin-right: 45px;
+        cursor: pointer;
+    }
+    &-top-img {
+        @include size(620px,600px);
+        object-fit: cover;
+        flex-shrink: 0;
+        margin: 95px 115px 0 85px;
+        border-radius: 10px;
+    }
+    &-both {
+        margin-top: 110px;
+        &-title {
+            font-family: $secondary-font;
+            font-size: 55px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 870px;
+            margin: auto;
+            line-height: 1.5;
+            margin-bottom: 50px;
+        }
+        &-desc {
+            font-size: 18px;
+            color: $text-coler;
+            text-align: center;
+            max-width: 870px;
+            margin: auto;
+            line-height: 1.5;
+            margin-bottom: 90px;
+        }
+    }
+    &-list {
+        @include flex-box;
+        margin: 0 85px;
+    }
+    &-list:nth-child(2) {
+        margin-top: 85px;
+    }
+    &-item-content::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px; // độ dày border
+        width: 100%;
+        background: linear-gradient(to right, $secondary-coler, $primary-coler);
+    }
+    &-item {
+        @include flex-box;
+        &-content {
+            position: relative;
+            max-width: 500px;
+            padding-bottom: 40px;
+            margin-right: 110px;
+            &:hover::after {
+                background: #006633; // hoặc bất kỳ màu nào bạn muốn
+            }
+        }
+        &-title {
+            font-family: $secondary-font;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        &-desc {
+            font-size: 18px;
+            line-height: 1.5;
+            color: $text-coler;
+        }
+
+    }
+    &-number {
+        font-family: $secondary-font;
+        font-size: 48px;
+        min-width: 100px;
+        // Gradient chữ từ đỏ sang vàng
+        background: linear-gradient(to right, $secondary-coler, $primary-coler);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text; // Cho Firefox hỗ trợ tốt hơn
+        color: transparent; // fallback
+    }
+}

@@ -1,0 +1,67 @@
+// mixin max width(@breakpoint) {@content}
+@mixin max-width($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content
+    }
+}
+
+@mixin min-width($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content
+    }
+}
+
+// mixin flexbox
+@mixin flex-box($flex: flex, $align-items: stretch, $justify-content: flex-start, $flex-direction: row, $flex-wrap: nowrap) {
+    display: $flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+}
+
+// text clamp
+@mixin text-clamp($rows: 1, $size: 100%) {
+    display: -webkit-box;
+    -webkit-line-clamp: $rows;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: $size;
+    max-width: $size;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+@mixin absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+@mixin absoluteCenter($direction: "left") {
+    position: absolute;
+    //@if $variable == {}
+    @if $direction == "left" {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $direction == "top" {
+        top: 50%;
+        transform: translateY(-50%);     
+    }
+    @if $direction == "both" {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Width, Height
+@mixin size($width: 100px, $height: $width) {
+    width: $width;
+    height: $height;
+}
