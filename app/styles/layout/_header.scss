@@ -1,5 +1,5 @@
 .header{
-    height: 160px;
+    height: 80px;
     &-logo {
         font-size: 24px;
         font-weight: bold;
@@ -10,7 +10,7 @@
     }
     &-list {
         @include flex-box(flex, stretch, space-between, row);
-        padding: 70px 60px 70px 115px;
+        padding: 50px 60px 70px 115px;
     }
     &-menu{
         margin-top: 20px;
@@ -27,5 +27,72 @@
         font-size: 24px;
         font-weight: bold;
         border-radius: 20px;
+    }
+    
+    // Hamburger menu cho mobile
+    &-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+}
+
+@include max-width(1023px) {
+    .header-button {
+        padding: 10px 10px;
+        font-size: 18px;
+    }
+}
+
+// Media query cho màn hình 767px và nhỏ hơn
+@include max-width(767px) {
+    .header {
+        height: auto;
+        
+        &-list {
+            flex-wrap: wrap;
+            padding: 20px;
+            position: relative;
+            justify-content: space-between; // Đảm bảo các phần tử được dàn đều
+        }
+        
+        &-logo {
+            flex: 1; // Giữ nguyên
+        }
+        
+        &-toggle {
+            display: block;
+            order: 3; // Thay đổi order từ 2 sang 3
+            margin-left: auto; // Di chuyển sang phải
+        }
+        
+        &-menu {
+            display: none; // Ẩn menu mặc định
+            flex-direction: column;
+            width: 100%;
+            order: 4; // Tăng order lên 4 (dưới toggle và button)
+            margin-top: 15px;
+            
+            &.active {
+                display: flex; // Hiển thị khi active
+            }
+            
+            &-item {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+        }
+        
+        &-button {
+            order: 2; // Giữ nguyên order
+            margin-left: 10px;
+            margin-right: 10px; // Thêm margin phải để tạo khoảng cách với toggle
+            padding: 8px 15px;
+            font-size: 16px;
+            border-radius: 15px;
+        }
     }
 }

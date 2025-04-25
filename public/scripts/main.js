@@ -11,3 +11,6 @@ window.addEventListener("load", function () {
     menu && menu.classList.remove("is-show");
   }
 });
+document.getElementById('menuToggle').addEventListener('click', function () {
+  document.getElementById('headerMenu').classList.toggle('active');
+});

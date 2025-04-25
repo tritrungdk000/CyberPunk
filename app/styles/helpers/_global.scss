@@ -27,3 +27,48 @@ button {
 button {
     cursor: pointer;
 }
+
+@media screen and (max-width: 1499px) {
+    body {
+      background-color: black; // Slightly lighter black background
+      color: #ffffff; // Ensure text is visible on dark background
+    }
+    
+    section:not(:last-child) {
+      position: relative;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, $secondary-coler, $primary-coler);
+      }
+    }
+    
+    // Add some padding to the bottom of each section for spacing
+    section {
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+    
+    // Ensure container and specific sections maintain the dark background
+    .container, .into, .your, .footer {
+      background-color: black;
+    }
+  }
+  
+  // Additional adjustments for screens below 768px
+  @media screen and (max-width: 767px) {
+    section:not(:last-child)::after {
+      width: 100%; // Slightly wider line on mobile
+    }
+    
+    section {
+      padding-bottom: 40px; // Less padding on mobile
+      margin-bottom: 40px; // Less margin on mobile
+    }
+  }
